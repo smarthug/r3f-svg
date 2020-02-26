@@ -33,7 +33,11 @@ SVGLoader.prototype = {
   },
 
   parse: function(text) {
+    console.log(text)
     function parseNode(node, style) {
+      console.log(node)
+      console.log(style)
+      // style={fill:"rgb(102, 181, 127)"}
       if (node.nodeType !== 1) return
 
       var transform = getNodeTransform(node)
@@ -839,6 +843,7 @@ SVGLoader.prototype = {
     var currentTransform = new Matrix3()
 
     var xml = new DOMParser().parseFromString(text, 'image/svg+xml') // application/xml
+    console.log(xml)
 
     parseNode(xml.documentElement, { fill: '#000' })
 
