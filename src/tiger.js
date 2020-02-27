@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect, Suspense } from "react";
 import { useFrame, useLoader, Dom, extend, useThree } from "react-three-fiber";
 import * as THREE from "three";
-import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
-//import { SVGLoader } from "./SVGLoader";
+// import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
+import { SVGLoader } from "./SVGLoader";
 import url from "./resource/tiger.svg";
 import threeUrl from "./resource/three.svg";
 import sectionView from "./resource/section.svg";
@@ -55,7 +55,8 @@ export function Tiger(props) {
 
     loader.load(url, function(data) {
       console.log(data);
-      var paths = data.paths;
+      // var paths = data.paths;
+      let paths = data;
 
       var group = new THREE.Group();
       group.scale.multiplyScalar(0.25);
