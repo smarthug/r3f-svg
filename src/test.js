@@ -49,15 +49,17 @@ function View(
   camera.position.z = 1800;
 
   
-  //var controls = new OrbitControls(camera, renderer.domElement);
+  var control  = new OrbitControls(camera, canvas);
   this.render = function() {
     //   camera.position.x += (mouseX - camera.position.x) * 0.05;
     //   camera.position.y += (-mouseY - camera.position.y) * 0.05;
     //   camera.lookAt(scene.position);
 
     renderer.render(scene, camera);
+
     
-    //controls.update();
+    
+    control.update();
 
     context.drawImage(renderer.domElement, 0, 0);
   };
